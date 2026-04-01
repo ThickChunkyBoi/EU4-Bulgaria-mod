@@ -1,0 +1,21 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = eastern
+primary_culture = bulgarian
+religion = orthodox
+capital = 2746	# Vidin
+
+1444.11.11 = {
+monarch = {
+name = "Fruzhin I"
+dynasty = "Shishman"
+birth_date = 1420.5.3
+death_date = 1453.5.29
+adm = 6
+dip = 6
+mil = 6
+}
+add_ruler_personality = righteous_personality
+add_ruler_personality = inspiring_leader_personality
+}

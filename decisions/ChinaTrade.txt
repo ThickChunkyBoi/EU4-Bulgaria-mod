@@ -1,0 +1,30 @@
+country_decisions = {
+    BLM_chinese_trade = {
+	    major = yes
+		potential = {
+		    tag = BUL
+			NOT = { has_country_flag = china_trade_flag }
+		}
+		allow = {
+		    stability = 2
+		    BGC = {
+			    has_reform = BLM_colonial_trade
+			}
+		}
+		effect = {
+		    add_treasury = 200
+			add_prestige = 10
+			BGC = {
+			    add_liberty_desire = -50
+			}
+			add_country_modifier = {
+			    name = "BLM_china_riches"
+				duration = -1
+			}
+			set_country_flag = china_trade_flag
+		}
+		ai_will_do = {
+		    factor = 1
+		}
+	}
+}

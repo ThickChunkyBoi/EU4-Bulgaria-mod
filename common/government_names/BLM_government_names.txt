@@ -1,0 +1,56 @@
+south_slavic_monarchy = {
+	rank = {
+		1 = PRINCEDOM
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = VOIVODE
+		2 = KRALJ
+		3 = TSAR
+	}
+
+	ruler_female = {
+		1 = VOJVODKINJA
+		2 = KRALJICA
+		3 = TSARICA
+	}
+
+	consort_male = {
+		1 = VOIVODE
+		2 = KRALJ
+		3 = TSAR
+	}
+
+	consort_female = {
+		1 = VOJVODKINJA
+		2 = KRALJICA
+		3 = TSARICA
+	}
+
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	trigger = {
+		government = monarchy
+		OR = {
+			primary_culture = croatian_new
+			primary_culture = serbian_new
+			primary_culture = slovene_new
+			primary_culture = bosnian_new
+			primary_culture = bulgarian_new
+			culture_group = south_slavic
+		}
+		NOT = { tag = CLI }
+	}
+}

@@ -1,0 +1,90 @@
+orthodox_question = {
+    potential = {
+	    NOT = {
+		    has_country_flag = had_reformed_religion
+		}
+		OR = {
+		    primary_culture = bulgarian
+			tag = BUL
+		}
+		BUL = {
+		    is_free_or_tributary_trigger = yes
+		}
+	}
+	
+	can_start = {
+	    has_any_disaster = no
+		any_province = {
+		    continent = europe
+			religion = protestant
+		}
+	}
+	
+	can_stop = {
+	    has_any_disaster = yes
+	}
+	
+	progress = {
+	    modifier = {
+		    factor = 1
+			BUL = {
+			    religion = orthodox
+			}
+		}
+		modifier = {
+		    factor = 0.5
+			BUL = {
+			    OR = {
+				    consort_religion = orthodox
+					consort_religion = protestant
+					consort_religion = reformed
+				}
+			}
+		}
+		modifier = {
+		    factor = 0.5
+			any_province = {
+			    continent = europe
+				religion = reformed
+			}
+		}
+		modifier = {
+		    factor = 1
+			NOT = { stability = 2 }
+		}
+		modifier = {
+		    factor = 1
+			NOT = { stability = 1 }
+		}
+		modifier = {
+		    factor = 2
+			NOT = { stability = 0 }
+		}
+	}
+	
+	can_end = {
+		mission_completed = BLM_new_tommorow
+	}
+	
+	modifier = {
+	    global_unrest = 3
+		religious_unity = -1
+		tolerance_own = -3
+	}
+	
+	on_start = bul_religion.1
+	on_end = bul_religion.2
+	
+	on_monthly = {
+	    events = {
+		}
+		random_events = {
+		    1000 = 0
+			100 = bul_religion.3
+			100 = bul_religion.4
+			100 = bul_religion.5
+			100 = bul_religion.6
+			100 = bul_religion.7
+		}
+	}
+}

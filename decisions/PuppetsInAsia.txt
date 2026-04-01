@@ -1,0 +1,92 @@
+country_decisions = {
+    BLM_asian_puppets = {
+	    major = yes
+		potential = {
+		    tag = BUL
+			NOT = { has_country_flag = puppets_in_asia }
+		}
+		allow = {
+		    stability = 2
+			BGC = {
+			    AND = {
+				    mission_completed = BLM_korean_question
+					mission_completed = BLM_tibetian_question
+				}
+			}
+		}
+		effect = {
+		    set_country_flag = puppets_in_asia
+		    country_event = {
+			    id = flavor_bul.22
+				title = flavor_bul.22.t
+				desc = flavor_bul.22.d
+				picture = BYZ_ADVISOR_eventPicture
+				major = no
+				is_triggered_only = yes
+				option = {
+				    name = flavor_bul.22.a
+					ai_chance = {
+					    factor = 1
+					}
+					trigger = {
+					    AND = {
+						    KOR = {
+							    is_subject_of = ROOT
+							}
+							TIB = {
+							    is_subject_of = ROOT
+							}
+						}
+					}
+					add_country_modifier = {
+					    name = "BLM_dominions"
+						duration = -1
+					}
+				}
+				option = {
+				    name = flavor_bul.22.b
+					ai_chance = {
+					    factor = 1
+					}
+					trigger = {
+					    OR = {
+						    AND = {
+							    KOR = {
+							        is_subject_of = ROOT
+							    }
+								NOT = { exists = TIB }
+							}
+							AND = {
+							    TIB = {
+							        is_subject_of = ROOT
+							    }
+								NOT = { exists = KOR }
+							}
+						}
+					}
+					add_country_modifier = {
+					    name = "BLM_asian_puppet"
+						duration = -1
+					}
+				}
+				option = {
+				    name = flavor_bul.22.c
+					ai_chance = {
+					    factor = 1
+					}
+					trigger = {
+					    AND = {
+						    NOT = { exists = KOR }
+							NOT = { exists = TIB }
+						}
+					}
+					add_treasury = 300
+					add_prestige = 15
+					add_adm_power = 150
+					add_dip_power = 150
+					add_mil_power = 150
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,1716 @@
+BLM_bgc_slot_setup_1 = {
+    slot = 1
+	generic = no
+	ai = yes
+	potential = {
+	    tag = BGC
+	    NOT = { has_country_flag = setup_in_china_completed }
+	}
+	has_country_shield = yes
+}
+BLM_bgc_slot_setup_2 = {
+    slot = 2
+	generic = no
+	ai = yes
+	potential = {
+	    tag = BGC
+	    NOT = { has_country_flag = setup_in_china_completed }
+	}
+	has_country_shield = yes
+}
+BLM_bgc_slot_setup_4 = {
+    slot = 4
+	generic = no
+	ai = yes
+	potential = {
+	    tag = BGC
+	    NOT = { has_country_flag = setup_in_china_completed }
+	}
+	has_country_shield = yes
+}
+BLM_bgc_slot_setup_5 = {
+    slot = 5
+	generic = no
+	ai = yes
+	potential = {
+	    tag = BGC
+	    NOT = { has_country_flag = setup_in_china_completed }
+	}
+	has_country_shield = yes
+}
+BLM_bgc_slot_setup_3 = {
+    slot = 3
+	generic = no
+	ai = yes
+	potential = {
+	    tag = BGC
+		NOT = { has_country_flag = setup_in_china_completed }
+	}
+	has_country_shield = yes
+	
+	BLM_bgc_arrival = {
+	    icon = mng_jing_hang_grand_canal
+		required_missions = {}
+		effect = {
+		    add_treasury = 200
+			add_stability = 2
+			country_event = {
+			    id = flavor_bgc.1
+				title = flavor_bgc.1.t
+				desc = flavor_bgc.1.d
+				picture = DIET_eventPicture
+				major = no
+				is_triggered_only = yes
+				option = {
+				    name = flavor_bgc.1.a
+					ai_chance = {
+		                factor = 1
+		            }
+					south_jiangsu_area = {
+					    limit = {
+						    NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+	BLM_bgc_expanding = {
+	    icon = mch_bypass_great_wall
+		required_missions = { BLM_bgc_arrival }
+		provinces_to_highlight = {
+		    area = south_jiangsu_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		    south_jiangsu_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1821 = {
+			    NOT = { devastation = 1 }
+				is_core = ROOT
+			}
+		}
+		effect = {
+		    add_prestige = 10
+			add_treasury = 100
+		    684 = {
+			    limit = {
+				    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			2148 = {
+			    limit = {
+				    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			2149 = {
+			    limit = {
+				    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	BLM_bgc_securing_the_south = {
+	    icon = mng_tame_china_sorrow
+		required_missions = { BLM_bgc_expanding }
+		provinces_to_highlight = {
+		    OR = {
+			    province_id = 684
+				province_id = 2148
+				province_id = 2149
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		    684 = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2148 = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2149 = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+		    add_country_modifier = {
+			    name = "BLM_secure_the_coast"
+				duration = 1825
+			}
+		}
+	}
+	BLM_bgc_consolidation = {
+	    icon = mission_high_income
+		required_missions = { BLM_bgc_expanding }
+		trigger = {
+		    all_owned_province = {
+			    NOT = { devastation = 1 }
+			}
+			1821 = {
+			    development = 20
+				religion = ROOT
+				OR = {
+				    has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+		    add_treasury = 200
+			add_prestige = 15
+			add_stability = 1
+			set_country_flag = setup_in_china_completed
+			swap_non_generic_missions = yes
+			country_event = {
+	            id = flavor_bgc.2
+	            title = flavor_bgc.2.t
+	            desc = flavor_bgc.2.d
+	            picture = NEGOTIATIONS_LUBLIN_eventPicture
+	            major = yes
+	            is_triggered_only = yes
+	            option = {
+		            name = flavor.bgc_2.a
+		            ai_chance = {
+			            factor = 1
+		            }
+		            set_capital = 1821
+		            add_country_modifier = {
+			            name = "BLM_foothold_in_china"
+			            duration = 7300
+		            }
+	            }
+            }
+		}
+	}
+}
+
+BLM_bgc_slot_1 = {
+    slot = 1
+	generic = no
+	ai = yes
+	potential = {
+	    AND = {
+		    tag = BGC
+		    has_country_flag = setup_in_china_completed
+		}
+	}
+	has_country_shield = yes
+	
+	BLM_create_the_army = {
+	    icon = mission_assemble_an_army
+		required_missions = {}
+		trigger = {
+		    manpower_percentage = 0.80
+			army_size_percentage = 0.90
+		}
+		effect = {
+		    add_country_modifier = {
+			    name = "BLM_reshaping_the_army"
+				duration = 3650
+			}
+		}
+	}
+	BLM_push_the_north = {
+	    icon = mch_proclaim_later_jin
+		required_missions = { BLM_the_interior }
+		position = 4
+		provinces_to_highlight = {
+		    OR = {
+			    area = shandong_area
+				area = north_henan_area
+				area = henan_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		    shandong_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_henan_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			henan_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+		    add_treasury = 200
+			add_prestige = 20
+			add_country_modifier = {
+			    name = "BLM_pushing_the_north"
+				duration = 2920
+			}
+		}
+	}
+	BLM_securing_the_north = {
+	    icon = mch_bypass_great_wall
+		required_missions = { BLM_push_the_north }
+		position = 5
+		trigger = {
+		    2139 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					AND = {
+					    OR = {
+					        has_building = fort_15th
+						    has_building = fort_16th
+						    has_building = fort_17th
+						    has_building = fort_18th
+					    }
+						OR = {
+						    has_building = coastal_defence
+							has_building = naval_battery
+						}
+					}
+				}
+			}
+			2138 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					AND = {
+					    OR = {
+					        has_building = fort_15th
+						    has_building = fort_16th
+						    has_building = fort_17th
+						    has_building = fort_18th
+					    }
+						OR = {
+						    has_building = coastal_defence
+							has_building = naval_battery
+						}
+					}
+				}
+			}
+			692 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					OR = {
+					    has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+		}
+		effect = {
+		    shandong_area = {
+			    add_province_modifier = {
+				    name = "BLM_north_secured"
+					duration = 14600
+				}
+			}
+			north_henan_area = {
+			    add_province_modifier = {
+				    name = "BLM_north_secured"
+					duration = 14600
+				}
+			}
+			henan_area = {
+			    add_province_modifier = {
+				    name = "BLM_north_secured"
+					duration = 14600
+				}
+			}
+		}
+	}
+	BLM_get_to_tibet = {
+	    icon = mission_beyond_the_urals
+		required_missions = { BLM_parly_achieved_goal }
+		position = 7
+		provinces_to_highlight = {
+		    OR = {
+			    area = guangxi_area
+				region = xinan_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+	        guangxi_area = {
+			    type = all
+			    country_or_non_sovereign_subject_holds = ROOT
+		    }
+		    xinan_region = {
+			    type = all
+			    country_or_non_sovereign_subject_holds = ROOT
+		    }
+	    }
+		effect = {
+		    tibet_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+			    name = "BLM_south_has_fallen"
+				duration = 7300
+			}
+		}
+	}
+	BLM_defend_the_border = {
+	    icon = mission_guns_of_urban
+		required_missions = { BLM_get_to_tibet }
+		position = 8
+		provinces_to_highlight = {
+		    OR = {
+			    province_id = 2166
+				province_id = 2164
+				province_id = 663
+			}
+			NOT = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					OR = {
+					    has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+		}
+		trigger = {
+		    2166 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					OR = {
+					    has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+			663 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					OR = {
+					    has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+			2164 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					OR = {
+					    has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+		}
+		effect = {
+		    2166 = {
+			    add_or_upgrade_fort_building = yes
+				add_province_modifier = {
+				    name = "BLM_south_incursions"
+					duration = -1
+				}
+			}
+			663 = {
+			    add_or_upgrade_fort_building = yes
+				add_province_modifier = {
+				    name = "BLM_south_incursions"
+					duration = -1
+				}
+			}
+			2164 = {
+			    add_or_upgrade_fort_building = yes
+				add_province_modifier = {
+				    name = "BLM_south_incursions"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+BLM_bgc_slot_2 = {
+    slot = 2
+	generic = no
+	ai = yes
+	potential = {
+	    AND = {
+		    tag = BGC
+		    has_country_flag = setup_in_china_completed
+		}
+	}
+	has_country_shield = yes
+	
+	BLM_create_the_navy = {
+	    icon = mission_galleys_in_port
+		required_missions = {}
+		trigger = {
+		    navy_size_percentage = 0.90
+			sailors_percentage = 0.80
+		}
+		effect = {
+		    add_country_modifier = {
+			    name = "BLM_accuire_navy"
+				duration = 3650
+			}
+		}
+	}
+	BLM_push_to_wuchan = {
+	    icon = restore_great_moravia
+		required_missions = { BLM_the_interior }
+		position = 4
+		provinces_to_highlight = {
+		    OR = {
+			    area = huguang_area
+				area = hunan_area
+				area = jiangxi_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		    huguang_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hunan_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jiangxi_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+		    add_prestige = 20
+			add_treasury = 200
+			add_country_modifier = {
+			    name = "BLM_spliting_china"
+				duration = 2920
+			}
+		}
+	}
+	BLM_secure_the_center = {
+	    icon = pacify_the_albanian_lands
+		required_missions = { BLM_push_to_wuchan }
+		position = 5
+		provinces_to_highlight = {
+		    OR = {
+			    province_id = 2171
+				province_id = 2173
+				province_id = 670
+			}
+			NOT = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					OR = {
+					    has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+		}
+		trigger = {
+		    2171 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					OR = {
+					    has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+			2173 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					OR = {
+					    has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+			670 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					OR = {
+					    has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+		}
+		effect = {
+		    huguang_area = {
+			    add_province_modifier = {
+				    name = "BLM_center_secured"
+					duration = 14600
+				}
+			}
+			hunan_area = {
+			    add_province_modifier = {
+				    name = "BLM_center_secured"
+					duration = 14600
+				}
+			}
+			jiangxi_area = {
+			    add_province_modifier = {
+				    name = "BLM_center_secured"
+					duration = 14600
+				}
+			}
+		}
+	}
+	BLM_northern_expedition = {
+	    icon = mng_outer_city_beijing
+		required_missions = { BLM_parly_achieved_goal }
+		position = 7
+		provinces_to_highlight = {
+		    OR = {
+			    region = north_china_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		    north_china_region = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+		    korea_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			liaoning_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 20
+			add_country_modifier = {
+			    name = "BLM_shattered_throne"
+				duration = 7300
+			}
+		}
+	}
+	BLM_maintain_the_great_wall = {
+	    icon = mch_bypass_great_wall
+		required_missions = { BLM_northern_expedition }
+		position = 8
+		provinces_to_highlight = {
+		    
+		}
+		trigger = {
+		    707 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					OR = {
+					    has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+			703 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					OR = {
+					    has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+			698 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					AND = {
+					    OR = {
+					        has_building = fort_15th
+						    has_building = fort_16th
+						    has_building = fort_17th
+						    has_building = fort_18th
+					    }
+						OR = {
+					        has_building = regimental_camp
+						    has_building = conscription_center
+					    }
+						OR = {
+					        has_building = barracks
+						    has_building = training_fields
+					    }
+					}
+				}
+			}
+		}
+		effect = {
+		    707 = {
+			    add_or_upgrade_fort_building = yes
+				add_province_modifier = {
+				    name = "BLM_north_incursions"
+					duration = -1
+				}
+			}
+			703 = {
+			    add_or_upgrade_fort_building = yes
+				add_province_modifier = {
+				    name = "BLM_north_incursions"
+					duration = -1
+				}
+			}
+			698 = {
+			    add_great_project_tier = {
+				    type = the_great_wall_of_china
+					tier = 1
+				}
+			    add_or_upgrade_fort_building = yes
+				add_or_upgrade_manpower_building = yes
+				add_province_modifier = {
+				    name = "BLM_north_incursions"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+BLM_bgc_slot_3 = {
+    slot = 3
+	generic = no
+	ai = yes
+	potential = {
+	    AND = {
+		    tag = BGC
+		    has_country_flag = setup_in_china_completed
+		}
+	}
+	has_country_shield = yes
+	
+	BLM_securing_the_capital = {
+	    icon = byz_city_of_worlds_desire
+		required_missions = {}
+		provinces_to_highlight = {
+		    OR = {
+			    province_id = 2143
+				province_id = 1838
+				province_id = 2146
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		    2143 = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1838 = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2146 = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1821 = {
+			    OR = {
+				    has_building = fort_15th
+					has_building = fort_16th
+					has_building = fort_17th
+					has_building = fort_18th
+				}
+			}
+			684 = {
+			    OR = {
+				    has_building = fort_15th
+					has_building = fort_16th
+					has_building = fort_17th
+					has_building = fort_18th
+				}
+			}
+		}
+		effect = {
+		    add_treasury = 100
+			add_prestige = 10
+			add_country_modifier = {
+			    name = "BLM_capital_secured"
+				duration = 5475
+			}
+		}
+	}
+	BLM_bgc_the_next_step = {
+	    icon = mission_unite_home_region
+		required_missions = {
+		    BLM_create_the_army
+			BLM_create_the_navy
+			BLM_securing_the_capital
+			BLM_developing_the_territories
+			BLM_conversion
+		}
+		trigger = {
+		    all_owned_province = {
+			    NOT = { devastation = 1 }
+				is_core = ROOT
+			}
+			BGC = {
+			    religious_unity = 1
+			}
+		}
+		effect = {
+		    country_event = {
+			    id = flavor_bgc.3
+				title = flavor_bgc.3.t
+				desc = flavor_bgc.3.d
+				picture = BATTLE_eventPicture
+				major = no
+				is_triggered_only = yes
+				option = {
+				    name = flavor_bgc.3.a
+					ai_chance = {
+					    factor = 1
+					}
+					add_country_modifier = {
+					    name = "BLM_battleplans"
+						duration = 5475
+					}
+					jiangsu_area = {
+					    limit = {
+						    NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					anhui_area = {
+					    limit = {
+						    NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					south_anhui_area = {
+					    limit = {
+						    NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					zhejiang_area = {
+					    limit = {
+						    NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+	BLM_the_interior = {
+	    icon = secure_the_sava
+		required_missions = { BLM_bgc_the_next_step }
+		provinces_to_highlight = {
+		    OR = {
+			    area = jiangsu_area
+				area = anhui_area
+				area = south_anhui_area
+				area = zhejiang_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		    jiangsu_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			anhui_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			south_anhui_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			zhejiang_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+		    shandong_area = {
+			    limit = {
+				    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_henan_area = {
+			    limit = {
+				    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			henan_area = {
+			    limit = {
+				    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			huguang_area = {
+			    limit = {
+				    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hunan_area = {
+			    limit = {
+				    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jiangxi_area = {
+			    limit = {
+				    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			fujian_area = {
+			    limit = {
+				    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			guangdong_area = {
+			    limit = {
+				    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_guangdong_area = {
+			    limit = {
+				    NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			country_event = {
+		        id = flavor_bgc.4
+			    title = flavor_bgc.4.t
+			    desc = flavor_bgc.4.d
+			    picture = AULIC_COUNCIL_eventPicture
+			    major = no
+			    is_triggered_only = yes
+			    option = {
+			        name = flavor_bgc.4.a
+				    ai_chance = {
+				        factor = 1
+				    }
+				    add_country_modifier = {
+				        name = "BLM_north"
+					    duration = 3650
+				    }
+			    }
+			    option = {
+			        name = flavor_bgc.4.b
+				    ai_chance = {
+				        factor = 1
+				    }
+				    add_country_modifier = {
+				        name = "BLM_center"
+					    duration = 3650
+				    }
+			    }
+			    option = {
+			        name = flavor_bgc.4.c
+				    ai_chance = {
+				        factor = 1
+				    }
+				    add_country_modifier = {
+				        name = "BLM_south"
+					    duration = 3650
+				    }
+			    }
+		    }
+		}
+	}
+	BLM_push_south = {
+	    icon = reclaim_our_ancestral_lands
+		required_missions = { BLM_the_interior }
+		provinces_to_highlight = {
+		    OR = {
+			    area = fujian_area
+				area = guangdong_area
+				area = west_guangdong_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		    fujian_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			guangdong_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_guangdong_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+		    add_treasury = 200
+			add_prestige = 20
+			add_country_modifier = {
+			    name = "BLM_taking_the_south"
+				duration = 2920
+			}
+		}
+	}
+	BLM_secure_the_south = {
+	    icon = new_pilings
+		required_missions = { BLM_push_south }
+		provinces_to_highlight = {
+		    OR = {
+			    province_id = 669
+				province_id = 668
+				province_id = 667
+			}
+			NOT = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					AND = {
+					    OR = {
+						    has_building = fort_15th
+							has_building = fort_16th
+							has_building = fort_17th
+							has_building = fort_18th
+						}
+						OR = {
+						    has_building = coastal_defence
+							has_building = naval_battery
+						}
+					}
+				}
+			}
+		}
+		trigger = {
+		    669 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					AND = {
+					    OR = {
+						    has_building = fort_15th
+							has_building = fort_16th
+							has_building = fort_17th
+							has_building = fort_18th
+						}
+						OR = {
+						    has_building = coastal_defence
+							has_building = naval_battery
+						}
+					}
+				}
+			}
+			668 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					AND = {
+					    OR = {
+						    has_building = fort_15th
+							has_building = fort_16th
+							has_building = fort_17th
+							has_building = fort_18th
+						}
+						OR = {
+						    has_building = coastal_defence
+							has_building = naval_battery
+						}
+					}
+				}
+			}
+			667 = {
+			    AND = {
+				    is_core = ROOT
+					has_owner_religion = yes
+					AND = {
+					    OR = {
+						    has_building = fort_15th
+							has_building = fort_16th
+							has_building = fort_17th
+							has_building = fort_18th
+						}
+						OR = {
+						    has_building = coastal_defence
+							has_building = naval_battery
+						}
+					}
+				}
+			}
+		}
+		effect = {
+		    fujian_area = {
+			    add_province_modifier = {
+				    name = "BLM_south_secured"
+					duration = 14600
+				}
+			}
+			guangdong_area = {
+			    add_province_modifier = {
+				    name = "BLM_south_secured"
+					duration = 14600
+				}
+			}
+			west_guangdong_area = {
+			    add_province_modifier = {
+				    name = "BLM_south_secured"
+					duration = 14600
+				}
+			}
+		}
+	}
+	BLM_parly_achieved_goal = {
+	    icon = construct_the_kiel_canal
+		required_missions = {
+		    BLM_secure_the_south
+			BLM_securing_the_north
+			BLM_secure_the_center
+			BLM_army_academy
+			BLM_navy_academy
+		}
+		trigger = {
+		    treasury = 1000
+		}
+		effect = {
+		    add_treasury = -1000
+			add_country_modifier = {
+			    name = "BLM_partly_goal"
+				duration = 7300
+			}
+			country_event = {
+			    id = flavor_bgc.5
+				title = flavor_bgc.5.t
+				desc = flavor_bgc.5.d
+				picture = easterngfx_COURT_eventPicture
+				major = yes
+				is_triggered_only = yes
+				option = {
+				    name = flavor_bgc.5.a
+					ai_chance = {
+			            factor = 1
+		            }
+					add_prestige = 20
+					guangxi_area = {
+					    limit = {
+						    NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					xinan_region = {
+					    limit = {
+						    NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					north_china_region = {
+					    limit = {
+						    NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+	BLM_conquer_tibet = {
+	    icon = mission_moroccan_ports
+		required_missions = { BLM_parly_achieved_goal }
+		provinces_to_highlight = {
+		    OR = {
+			    region = tibet_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		    tibet_region = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+		    add_treasury = 200
+			add_prestige = 10
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 150
+		}
+	}
+	BLM_tibetian_question = {
+	    icon = mission_noble_council
+		required_missions = { BLM_conquer_tibet }
+		trigger = {
+		    treasury = 500
+		    4517 = {
+			    is_core = ROOT
+				has_owner_religion = yes
+				AND = {
+				    OR = {
+					    has_building = temple
+						has_building = cathedral
+					}
+					OR = {
+					    has_building = marketplace
+						has_building = trade_depot
+						has_building = stock_exchange
+					}
+				}
+			}
+			677 = {
+			    is_core = ROOT
+				has_owner_religion = yes
+				AND = {
+				    OR = {
+					    has_building = temple
+						has_building = cathedral
+					}
+					OR = {
+					    has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+			NOT = { exists = TIB }
+		}
+		effect = {
+		    add_treasury = -500
+			country_event = {
+			    id = flavor_bgc.6
+				title = flavor_bgc.6.t
+	            desc = flavor_bgc.6.d
+	            picture = iberian_ECONOMY_eventPicture
+	            major = no
+	            is_triggered_only = yes
+				option = {
+				    name = flavor_bgc.6.a
+					ai_chance = {
+					    factor = 1
+					}
+					add_country_modifier = {
+				        name = "BLM_territory_of_tibet"
+					    duration = -1
+				    }
+					add_accepted_culture = tibetan
+				}
+				option = {
+				    name = flavor_bgc.6.b
+					ai_chance = {
+					    factor = 1
+					}
+					release = TIB
+			        TIB = {
+			            change_religion = ROOT
+				        add_country_modifier = {
+				            name = "BLM_convert_tibet"
+					        duration = 7300
+				        }
+			        }
+			        create_march = TIB
+			        tibet_region = {
+			            add_core = TIB
+			        }
+				}
+			}
+		}
+	}
+	BLM_the_new_capital = {
+	    icon = a.e.i.o.u.
+		required_missions = {
+		    BLM_defend_the_border
+			BLM_maintain_the_great_wall
+			BLM_tibetian_question
+			BLM_korean_question
+			BLM_massive_conversion
+		}
+		trigger = {
+		    treasury = 2000
+		    1816 = {
+			    base_tax = 15
+				base_production = 15
+				base_manpower = 15
+				NOT = { devastation = 1 }
+				has_owner_accepted_culture = yes
+				NOT = { nationalism = 1 }
+			}
+		}
+		effect = {
+		    add_treasury = -2000
+			add_prestige = 10
+			set_capital = 1816
+			add_country_modifier = {
+			    name = "BLM_preparing_the_coronation"
+				duration = 1825
+			}
+			1816 = {
+			    add_province_modifier = {
+				    name = "BLM_the_new_seat"
+					duration = -1
+				}
+			}
+		}
+	}
+	BLM_complete_takeover = {
+	    icon = all_bases_covered
+		required_missions = { BLM_the_new_capital }
+		trigger = {
+		    NOT = { has_country_modifier = BLM_preparing_the_coronation }
+		}
+		effect = {
+		    custom_tooltip = BLM_completion
+			hidden_effect = {
+			    add_treasury = 100
+				add_prestige = 5
+			}
+		}
+	}
+}
+
+BLM_bgc_slot_4 = {
+    slot = 4
+	generic = no
+	ai = yes
+	potential = {
+	    AND = {
+		    tag = BGC
+		    has_country_flag = setup_in_china_completed
+		}
+	}
+	has_country_shield = yes
+	
+	BLM_developing_the_territories = {
+	    icon = mission_early_modern_university
+		required_missions = {}
+		trigger = {
+		    all_owned_province = {
+			    development = 10
+				NOT = { devastation = 1 }
+				is_core = ROOT
+			}
+			AND = {
+			    accepted_culture = wu
+				accepted_culture = jianghuai
+			}
+		}
+		effect = {
+		    every_owned_province = {
+			    limit = {
+				    OR = {
+					    area = south_jiangsu_area
+						province_id = 1821
+						province_id = 684
+					}
+				}
+				add_province_modifier = {
+				    name = "BLM_developing_center"
+					duration = -1
+				}
+			}
+		}
+	}
+	BLM_bgc_expanding_the_army = {
+	    icon = mission_teutonic_knights
+		required_missions = { BLM_the_interior }
+		position = 4
+		trigger = {
+		    manpower_percentage = 1
+			army_size_percentage = 1
+			treasury = 500
+		}
+		effect = {
+		    add_treasury = -400
+		    add_country_modifier = {
+			    name = "BLM_expanding_army"
+				duration = 10950
+			}
+		}
+	}
+	BLM_army_academy = {
+	    icon = fra_golden_march
+		required_missions = { BLM_bgc_expanding_the_army }
+		position = 5
+		trigger = {
+		    army_professionalism = 0.8
+			army_tradition = 30
+			treasury = 1000
+			682 = {
+			    artillery_in_province = BUL
+				base_tax = 10
+				base_production = 10
+				base_manpower = 10
+				AND = {
+				    owned_by = ROOT
+					is_core = ROOT
+				}
+			}
+		}
+		effect = {
+		    add_treasury = -900
+			add_prestige = 30
+			682 = {
+			    add_building = university
+			    add_province_modifier = {
+				    name = "BLM_land_academy"
+					duration = -1
+				}
+			}
+		}
+	}
+	BLM_into_korea = {
+	    icon = mjz_into_korea
+		required_missions = { BLM_parly_achieved_goal }
+		position = 7
+		provinces_to_highlight = {
+		    OR = {
+			    area = liaoning_area
+				region = korea_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		    liaoning_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			korea_region = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+		    add_treasury = 200
+			add_prestige = 15
+			add_adm_power = 100
+			add_dip_power = 150
+			add_mil_power = 150
+		}
+	}
+	BLM_korean_question = {
+	    icon = mission_restore_faith_in_the_throne
+		required_missions = { BLM_into_korea }
+		position = 8
+		trigger = {
+		    NOT = { exists = KOR }
+			treasury = 800
+			1845 = {
+			    is_core = ROOT
+				has_owner_religion = yes
+				AND = {
+				    OR = {
+					    has_building = temple
+						has_building = cathedral
+					}
+					OR = {
+					    has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+			735 = {
+			    is_core = ROOT
+				has_owner_religion = yes
+				AND = {
+				    OR = {
+					    has_building = temple
+						has_building = cathedral
+					}
+					OR = {
+					    has_building = workshop
+						has_building = counting_house
+					}
+				}
+			}
+			2745 = {
+			    is_core = ROOT
+				has_owner_religion = yes
+				AND = {
+				    OR = {
+					    has_building = temple
+						has_building = cathedral
+					}
+					OR = {
+					    has_building = marketplace
+						has_building = trade_depot
+						has_building = stock_exchange
+					}
+				}
+			}
+		}
+		effect = {
+		    add_treasury = -800
+		    country_event = {
+			    id = flavor_bgc.7
+				title = flavor_bgc.7.t
+	            desc = flavor_bgc.7.d
+	            picture = DIPLOMACY_SIGNING_eventPicture
+	            major = no
+	            is_triggered_only = yes
+				option = {
+				    name = flavor_bgc.7.a
+					ai_chance = {
+					    factor = 1
+					}
+					add_country_modifier = {
+				        name = "BLM_territory_of_korea"
+					    duration = -1
+				    }
+					add_accepted_culture = korean
+				}
+				option = {
+				    name = flavor_bgc.7.b
+					ai_chance = {
+					    factor = 1
+					}
+					release = KOR
+			        KOR = {
+			            change_religion = ROOT
+				        add_country_modifier = {
+				            name = "BLM_convert_korea"
+					        duration = 7300
+				        }
+			        }
+			        create_march = KOR
+			        korea_region = {
+			            add_core = KOR
+			        }
+				}
+			}
+		}
+	}
+}
+
+BLM_bgc_slot_5 = {
+    slot = 5
+	generic = no
+	ai = yes
+	potential = {
+	    AND = {
+		    tag = BGC
+		    has_country_flag = setup_in_china_completed
+		}
+	}
+	has_country_shield = yes
+	
+	BLM_conversion = {
+	    icon = mission_autocephalous_archbishopric
+		required_missions = {}
+		provinces_to_highlight = {
+		    OR = {
+			    province_id = 684
+				province_id = 2149
+				province_id = 2145
+			}
+			NOT = { religion = ROOT }
+		}
+		trigger = {
+		    684 = {
+			    has_owner_religion = yes
+			}
+			2149 = {
+			    has_owner_religion = yes
+			}
+			2145 = {
+			    has_owner_religion = yes
+			}
+		}
+		effect = {
+		    add_country_modifier = {
+			    name = "BLM_new_religion_in_china"
+				duraion = 10950
+			}
+		}
+	}
+	BLM_expansion_of_the_navy = {
+	    icon = mission_rb_grow_the_channel
+		required_missions = { BLM_the_interior }
+		position = 4
+		trigger = {
+		    navy_size_percentage = 1
+			sailors_percentage = 1
+			treasury = 500
+		}
+		effect = {
+		    add_treasury = -400
+			add_country_modifier = {
+			    name = "BLM_navy_expansion"
+				duration = 10950
+			}
+		}
+	}
+	BLM_navy_academy = {
+	    icon = mission_rb_renovate_oxbridge
+		required_missions = { BLM_expansion_of_the_navy }
+		position = 5
+		trigger = {
+		    army_professionalism = 0.8
+			navy_tradition = 30
+			treasury = 1000
+			guangdong_area = {
+			    type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			668 = {
+			    has_building = shipyard
+			    base_tax = 10
+				base_production = 10
+				base_manpower = 10
+				AND = {
+				    owned_by = ROOT
+					is_core = ROOT
+				}
+			}
+		}
+		effect = {
+		    add_treasury = -900
+			add_prestige = 30
+			668 = {
+			    add_building = university
+			    add_province_modifier = {
+				    name = "BLM_macau_navy_academy"
+					duration = -1
+				}
+			}
+		}
+	}
+	BLM_initial_conversion = {
+	    icon = chivalry_is_not_dead
+		required_missions = { BLM_parly_achieved_goal }
+		position = 7
+		provinces_to_highlight = {
+		    OR = {
+			    region = south_china_region
+			}
+			NOT = { has_owner_religion = yes }
+		}
+		trigger = {
+		    treasury = 500
+			custom_trigger_tooltip = {
+			    tooltip = conversion_of_south_china
+				all_owned_province = {
+			        region = south_china_region
+				    has_owner_religion = yes
+			    }
+			}
+		}
+		effect = {
+		    add_treasury = -500
+		    add_adm_power = 150
+			add_dip_power = 100
+			add_mil_power = 100
+			add_country_modifier = {
+			    name = "BLM_first_wave"
+				duration = 3650
+			}
+		}
+	}
+	BLM_massive_conversion = {
+	    icon = spread_piety
+		required_missions = { BLM_initial_conversion }
+		position = 8
+		provinces_to_highlight = {
+		    OR = {
+			    region = xinan_region
+				region = north_china_region
+			}
+			NOT = { has_owner_religion = yes }
+		}
+		trigger = {
+		    treasury = 800
+			custom_trigger_tooltip = {
+			    tooltip = conversion_of_north_china
+				all_owned_province = {
+			        region = north_china_region
+				    has_owner_religion = yes
+			    }
+			}
+			custom_trigger_tooltip = {
+			    tooltip = conversion_of_west_china
+				all_owned_province = {
+			        region = xinan_region
+				    has_owner_religion = yes
+			    }
+			}
+			NOT = {
+			    has_country_modifier = BLM_first_wave
+			}
+		}
+		effect = {
+		    add_treasury = -600
+			add_prestige = 15
+			add_country_modifier = {
+			    name = "BLM_christian_china"
+				duration = -1
+			}
+		}
+	}
+}

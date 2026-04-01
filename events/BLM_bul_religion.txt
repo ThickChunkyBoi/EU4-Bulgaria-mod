@@ -1,0 +1,358 @@
+namespace = bul_religion
+normal_or_historical_nations = yes
+
+country_event = {
+    id = bul_religion.1
+	title = bul_religion.1.t
+	desc = bul_religion.1.d
+	picture = ORTHODOX_eventPicture
+	major = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+	    set_country_flag = reforming_religion
+	}
+	option = {
+	    name = bul_religion.1.a
+		ai_chance = {
+		    factor = 1
+		}
+		add_stability = -1
+	}
+}
+country_event = {
+    id = bul_religion.2
+	title = bul_religion.2.t
+	desc = bul_religion.2.d
+	picture = PROTESTANT_PRINTED_eventPicture
+	major = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+	    set_country_flag = had_reformed_religion
+	}
+	option = {
+	    name = bul_religion.2.a
+		add_stability = 2
+		add_prestige = 10
+	}
+}
+country_event = {
+    id = bul_religion.3
+	title = bul_religion.3.t
+	desc = bul_religion.3.d
+	picture = south_slavic_RELIGION_eventPicture
+	major = no
+	trigger = {
+	    NOT = {
+			has_country_modifier = BLM_reforrmation_influence
+		}
+	    OR = {
+			consort_religion = orthodox
+			consort_religion = protestant
+			consort_religion = reformed
+		}
+	}
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+	    name = bul_religion.3.a
+		add_country_modifier = {
+		    name = "BLM_reforrmation_influence"
+			duration = 1095
+		}
+		add_legitimacy = -20
+	}
+}
+country_event = {
+    id = bul_religion.4
+	title = bul_religion.4.t
+	desc = bul_religion.4.d
+	picture = TRADEGOODS_eventPicture
+	major = no
+	trigger = {
+	    NOT = {
+		    OR = {
+			    has_country_modifier = BLM_foreign_aid
+				has_country_modifier = BLM_stand_alone
+			}
+		}
+	    any_ally = {
+		    religion = orthodox
+		}
+	}
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+	    name = bul_religion.4.a
+		ai_chance = {
+		    factor = 1
+		}
+		add_country_modifier = {
+		    name = "BLM_foreign_aid"
+			duration = 1095
+		}
+		add_treasury = 100
+		add_manpower = 2
+	}
+	option = {
+	    name = bul_religion.4.b
+		ai_chance = {
+		    factor = 1
+		}
+		add_country_modifier = {
+		    name = "BLM_stand_alone"
+			duration = 1095
+		}
+		add_prestige = 10
+	}
+}
+country_event = {
+    id = bul_religion.5
+	title = bul_religion.5.t
+	desc = bul_religion.5.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	major = no
+	trigger = {
+	    OR = {
+		    has_country_modifier = BLM_foreign_aid
+			has_country_modifier = BLM_reforrmation_influence
+			
+		}
+	}
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+	    name = bul_religion.5.a
+		random_owned_province = {
+		    limit = { is_core = ROOT }
+			spawn_rebels = {
+			    type = orthodox_rebels
+				size = 1
+			}
+		}
+	}
+}
+country_event = {
+    id = bul_religion.6
+	title = bul_religion.6.t
+	desc = bul_religion.6.d
+	picture = 
+	major = no
+	trigger = {
+	    OR = {
+			has_country_modifier = BLM_stand_alone
+			has_country_modifier = BLM_reforrmation_influence
+		}
+	}
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+	    name = bul_religion.6.a
+		random_owned_province = {
+		    limit = { is_core = ROOT }
+			spawn_rebels = {
+			    type = orthodox_rebels
+				size = 2
+			}
+		}
+	}
+}
+country_event = {
+    id = bul_religion.7
+	title = bul_religion.7.t
+	desc = bul_religion.7.d
+	picture = BYZ_REVOLUTION_eventPicture
+	major = no
+	trigger = {
+	    capital_scope = {
+			controlled_by = owner
+			has_siege = no		
+		}
+	}
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+	    name = bul_religion.7.a
+		capital_scope = {
+			spawn_rebels = {
+			    type = orthodox_rebels
+				size = 3
+			}
+		}
+	}
+}
+country_event = {
+			    id = bul_religion.8
+				title = bul_religion.8.t
+				desc = bul_religion.8.d
+				picture = PROTESTANT_CATHOLIC_DEBATE_eventPicture
+				major = no
+				is_triggered_only = yes
+				trigger = {
+				    has_mission = BLM_first_thoughts
+				}
+				option = {
+				    name = bul_religion.8.a
+					ai_chance = {
+					    factor = 1
+					}
+					set_country_flag = orthodox_values
+					add_prestige = 5
+					add_legitimacy = -20
+				    add_stability = -1
+					add_country_modifier = {
+					    name = "BLM_orthodox_values"
+						duration = 1095
+					}
+				}
+				option = {
+				    name = bul_religion.8.b
+					ai_chance = {
+					    factor = 1
+					}
+					set_country_flag = papacy_mission
+					add_prestige = -10
+					add_legitimacy = 5
+					add_stability = -1
+					add_country_modifier = {
+					    name = "BLM_mission_to_rome"
+						duration = 1095
+					}
+				}
+}
+country_event = {
+			    id = bul_religion.9
+				title = bul_religion.9.t
+				desc = bul_religion.9.d
+				picture = PROTESTANT_GREAT_REFORMER_eventPicture
+				major = no
+				is_triggered_only = yes
+				trigger = {
+				    has_mission = BLM_execution
+				}
+				option = {
+				    name = bul_religion.9.a
+					ai_chance = {
+					    factor = 1
+					}
+					set_country_flag = orthodox_traditions
+					add_country_modifier = {
+					    name = "BLM_orthodox_traditions"
+						duration = 1095
+					}
+				}
+				option = {
+				    name = bul_religion.9.b
+					ai_chance = {
+					    factor = 1
+					}
+					set_country_flag = catholic_influence
+					add_country_modifier = {
+					    name = "BLM_western_influence"
+						duration = 1095
+					}
+				}
+}
+country_event = {
+			    id = bul_religion.10
+				title = bul_religion.10.t
+				desc = bul_religion.10.d
+				picture = BYZ_BYZANTINE_EMPEROR_eventPicture
+				major = yes
+				is_triggered_only = yes
+				trigger = {
+				    has_mission = BLM_new_tommorow
+				}
+				immediate = {
+				    set_country_flag = new_tommorow
+				}
+				option = {
+				    name = bul_religion.10.a
+					ai_chance = {
+					    factor = 1
+					}
+					trigger = {
+					    AND = {
+						    has_country_flag = orthodox_values
+							has_country_flag = orthodox_traditions
+						}
+					}
+					add_patriarch_authority = 0.7
+					add_prestige = 10
+					add_country_modifier = {
+					    name = "BLM_strong_orthodoxy"
+						duration = -1
+					}
+				}
+				option = {
+				    name = bul_religion.10.b
+					ai_chance = {
+					    factor = 1
+					}
+					trigger = {
+					    AND = {
+						    has_country_flag = papacy_mission
+							has_country_flag = catholic_influence
+						}
+					}
+					ROOT = {
+					    change_religion = catholic
+					}
+					add_papal_influence = 25
+					random_owned_province = {
+					    change_religion = catholic
+					}
+					add_country_modifier = {
+					    name = "BLM_papal_blessing"
+						duration = -1
+					}
+				}
+				option = {
+				    name = bul_religion.10.c
+					ai_chance = {
+					    factor = 1
+					}
+					trigger = {
+					    OR {
+						    AND = {
+							    has_country_flag = orthodox_values
+								has_country_flag = catholic_influence
+							}
+							AND = {
+							    has_country_flag = papacy_mission
+								has_country_flag = orthodox_traditions
+							}
+						}
+					}
+					enable_religion = rorthodox
+					ROOT = {
+					    change_religion = rorthodox
+					}
+					random_owned_province = {
+					    change_religion = rorthodox
+						add_permanent_province_modifier = {
+						    name = "religious_zeal_at_conv"
+							duration = 9125
+						}
+					}
+					add_country_modifier = {
+					    name = "BLM_new_dawn"
+						duration = -1
+					}
+				}
+}

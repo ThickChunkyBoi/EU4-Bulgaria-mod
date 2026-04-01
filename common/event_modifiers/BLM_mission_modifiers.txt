@@ -1,0 +1,695 @@
+BLM_seek_support = {
+    warscore_cost_vs_other_religion = -0.2
+	land_morale = 0.1
+	movement_speed = 0.1
+}
+BLM_infiltrate_tarnovo = {
+    local_defensiveness = -0.1
+	local_garrison_size = -0.1
+	supply_limit_modifier = -0.25
+}
+BLM_gathered_forces = {
+    army_tradition_decay = -0.02
+	discipline = 0.2
+	infantry_power = 0.1
+	cavalry_power = 0.1
+	artillery_power = 0.1
+	land_morale = 0.1
+}
+BLM_war_of_revenge = {
+    warscore_cost_vs_other_religion = -0.2
+	diplomatic_reputation = 2
+	global_unrest = -1
+}
+BLM_bulgaria_reborn = {
+    	all_power_cost = -0.15
+		prestige_decay = -0.02
+		stability_cost_modifier = -0.1
+}
+BLM_old_capital_restored = {
+    tax_income = 12
+	local_development_cost = -0.15
+	institution_growth = 1
+	local_unrest = -5
+	local_defensiveness = 0.2
+}
+BLM_militarization_of_the_realm = {
+    infantry_cost = -0.20
+	global_manpower_modifier = 0.15
+}
+BLM_new_cavalry = {
+    cavalry_cost = -0.15
+	cavalry_power = 0.10
+}
+BLM_fund_the_artillery = {
+    artillery_cost = -0.15
+	artillery_power = 0.10
+}
+BLM_national_military_academy = {
+    yearly_army_professionalism = 0.02
+	drill_gain_modifier = 0.10
+	drill_decay_modifier = -0.10
+	military_tactics = 0.30
+	leader_cost = -0.10
+	land_forcelimit_modifier = 0.10
+	leader_land_fire = 1
+	leader_land_manuever = 1
+	leader_land_shock = 1
+	leader_siege = 1
+}
+BLM_a_navy_of_our_own = {
+    global_ship_cost = -0.2
+	global_ship_recruit_speed = -0.3
+}
+BLM_naval_academy = {
+    navy_tradition = 1
+	global_sailors_modifier = 0.15
+	sailor_maintenance_modifer = -0.1
+	naval_attrition = -0.1
+	naval_morale = 0.1
+	admiral_cost = -0.1
+	leader_naval_fire = 1
+	leader_naval_manuever = 1
+	leader_naval_shock = 1
+}
+BLM_expand_the_navy = {
+    naval_forcelimit_modifier = 0.15
+}
+BLM_professional_army = {
+    army_tradition_decay = -0.02
+	infantry_power = 0.10
+	infantry_fire = 1
+	infantry_shock = 1
+	cavalry_power = 0.10
+	cavalry_fire = 1
+	cavalry_shock = 1
+	artillery_power = 0.10
+	artillery_fire = 1
+	artillery_shock = 1
+	siege_ability = 0.10
+	discipline = 0.1
+	land_morale = 0.10
+	navy_tradition_decay = -0.02
+	heavy_ship_power = 0.1
+	light_ship_power = 0.1
+	galley_power = 0.1
+	global_ship_repair = 0.1
+}
+BLM_focus_the_south = {
+    siege_ability = 0.10
+	ship_durability = 0.1
+	global_naval_engagement_modifier = 0.15
+	warscore_cost_vs_other_religion = -0.2
+}
+BLM_focus_the_west = {
+    infantry_power = 0.15
+	artillery_fire = 1
+	reinforce_speed = 0.10
+	land_morale = 0.10
+}
+BLM_focus_the_north = {
+    movement_speed = 0.15
+	land_attrition = -0.10
+	cavalry_power = 0.10
+	cavalry_shock = 1
+}
+BLM_integrate_the_serbs = {
+    num_accepted_cultures = 1
+	relation_with_accepted_culture = 30
+}
+BLM_assimilate_the_serbs = {
+    culture_conversion_cost = -0.25
+}
+BLM_preparations_for_south_italy = {
+    ae_impact = -0.2
+}
+BLM_invade_north_africa = {
+    warscore_cost_vs_other_religion = -0.25
+	global_missionary_strength = 0.05
+	missionary_maintenance_cost = -0.1
+	land_attrition = -0.10
+}
+BLM_malta_fortified = {
+    fort_level = 1
+	local_defensiveness = 0.2
+	blockade_force_required = 0.7
+	block_slave_raid = yes
+	local_unrest = -10
+}
+BLM_defend_against_pirates = {
+    naval_maintenance_modifier = -0.1
+	global_naval_engagement_modifier = 0.1
+    naval_attrition = -0.1
+}
+BLM_supremacy_over_italy = {
+    global_trade_power = 0.1
+	embargo_efficiency = 0.25
+	global_ship_trade_power = 0.2
+}
+BLM_the_crown_of_naples = {
+    diplomatic_reputation = 1
+	diplomatic_upkeep = 1
+}
+BLM_conquest_of_southern_italy = {
+    global_tax_modifier = 0.05
+	production_efficiency = 0.05
+	global_unrest = -1
+}
+BLM_conquest_of_the_center_of_catholicism = {
+    diplomatic_reputation = 1
+	yearly_patriarch_authority = 0.1
+	overextension_impact_modifier = -0.1
+}
+BLM_assimilate_the_romanians = {
+    culture_conversion_cost = -0.25
+	culture_conversion_time = -0.15
+}
+BLM_integrate_the_romanians = {
+    stability_cost_modifier = -0.1
+	legitimacy = 1
+}
+BLM_crown_of_theodoro = {
+    diplomatic_reputation = 1
+	diplomatic_upkeep = 1
+}
+BLM_crown_of_russia = {
+    diplomatic_reputation = 1
+	diplomatic_upkeep = 1
+	envoy_travel_time = -0.2
+}
+BLM_coast_to_the_aegean_sea = {
+    trade_range_modifier = 0.25
+	trade_efficiency = 0.15
+	embargo_efficiency = 0.2
+}
+BLM_integrate_the_albanians = {
+    num_accepted_cultures = 1
+	stability_cost_modifier = -0.1
+}
+BLM_assimilate_the_albanians = {
+    culture_conversion_cost = -0.25
+	culture_conversion_time = -0.15
+}
+BLM_mantle_of_second_rome = {
+    diplomatic_reputation = 1
+	inflation_reduction = 0.1
+	administrative_efficiency = 0.1
+}
+BLM_proclaim_third_rome = {
+    diplomatic_reputation = 1
+	core_creation = -0.1
+	technology_cost = -0.1
+}
+BLM_third_rome = {
+    tax_income = 10
+	allowed_num_of_manufactories = 2
+	local_development_cost_modifier = -0.3
+	institution_growth = 1
+}
+BLM_patriarch_of_antioch = {
+    local_unrest = -1
+	local_tax_modifier = 0.1
+	missionaries = 1
+}
+BLM_the_holy_city = {
+    missionaries = 1
+	global_heathen_missionary_strength = 0.05
+}
+BLM_patriarch_of_alexandria = {
+    missionary_maintenance_cost = -0.1
+	warscore_cost_vs_other_religion = -0.1
+}
+BLM_anatolian_crusade = {
+    vassal_income = 0.2
+	global_unrest = -2
+	land_attrition = -0.15
+}
+BLM_georgian_ally = {
+    diplomatic_reputation = 1
+	stability_cost_modifier = -0.1
+}
+BLM_georgian_crown = {
+    diplomatic_reputation = 1
+	diplomatic_upkeep = 1
+}
+BLM_convert_the_arabs = {
+    global_heathen_missionary_strength = 0.05
+	missionaries = 1
+	yearly_patriarch_authority = 0.1
+}
+BLM_solun_expanded = {
+    local_sailors_modifier = 0.1
+	trade_goods_size = 0.5
+	province_trade_power_modifier = 0.1
+	local_production_efficiency = 0.15
+}
+BLM_center_of_the_adriatic_trade = {
+    province_trade_power_value = 0.5
+	province_trade_power_modifier = 0.15
+	global_trade_power = 0.1
+}
+BLM_expand_on_the_adriatic_trade = {
+    trade_value_modifier = 0.1
+	local_build_cost = -0.2
+	local_tax_modifier = 0.1
+}
+BLM_dominate_middle_eastern_market = {
+    merchants = 1
+	caravan_power = 0.2
+	placed_merchant_power_modifier = 0.5
+	trade_range_modifier = 0.25
+	embargo_efficiency = 0.25
+}
+BLM_crimean_trade = {
+    trade_goods_size_modifier = 0.2
+	trade_value_modifier = 0.1
+	province_trade_power_modifier = 0.1
+}
+BLM_bulgarian_investment = {
+    global_tax_modifier = 0.07
+	build_cost = -0.12
+	liberty_desire = -10
+}
+BLM_egyptian_dominance = {
+    caravan_power = 0.2
+	global_ship_trade_power = 0.2
+	province_trade_power_modifier = 0.1
+}
+BLM_athens = {
+    trade_value_modifier = 0.1
+	province_trade_power_modifier = 0.1
+}
+BLM_izmir = {
+    trade_value_modifier = 0.1
+	province_trade_power_modifier = 0.1
+}
+BLM_tsarigrad_expanded = {
+    trade_goods_size_modifier = 0.25
+	trade_goods_size = 0.5
+	province_trade_power_modifier = 0.1
+	local_defensiveness = 0.1
+}
+BLM_center_of_world_trade = {
+    province_trade_power_modifier = 0.1
+	trade_goods_size = 1
+	trade_value = 1
+}
+BLM_master_of_world_trade = {
+    merchants = 1
+	global_trade_power = 0.1
+	trade_range_modifier = 0.25
+	trade_efficiency = 0.15
+	embargo_efficiency = 0.25
+	global_ship_trade_power = 0.2
+}
+BLM_costly_victory_in_varna = {
+    discipline = -0.1
+	land_morale = -0.1
+	global_manpower_modifier = -0.10
+	diplomatic_reputation = -1
+}
+BLM_destroy_kaaba = {
+    global_missionary_strength = 0.03
+	missionary_maintenance_cost = -0.1
+	yearly_patriarch_authority = 0.1
+	relation_with_heathens = -20
+}
+BLM_reforrmation_influence = {
+    diplomatic_reputation = 1
+	idea_cost = -0.1
+}
+BLM_foreign_aid = {
+    missionary_maintenance_cost = -0.2
+	global_unrest = -0.5
+}
+BLM_stand_alone = {
+    prestige = 0.5
+	prestige_decay = -0.01
+	yearly_corruption = -0.1
+	global_unrest = 0.5
+	missionary_maintenance_cost = 0.1
+}
+BLM_orthodox_values = {
+    tolerance_own = 1
+	same_religion_advisor_cost = -0.2
+	legitimacy = 0.5
+}
+BLM_mission_to_rome = {
+    tolerance_heretic = 1
+	legitimacy = -0.5
+	improve_relation_modifier = 0.2
+	diplomatic_reputation = 1
+}
+BLM_orthodox_traditions = {
+    tolerance_own = 2
+	legitimacy = 0.5
+	diplomatic_upkeep = 1
+}
+BLM_western_influence = {
+    tolerance_heretic = 2
+	legitimacy = -0.5
+	improve_relation_modifier = 0.3
+	envoy_travel_time = -0.2
+}
+BLM_strong_orthodoxy = {
+    tolerance_own = 3
+	legitimacy = 1
+	prestige = 0.5
+	diplomatic_reputation = 1
+	global_unrest = -2
+}
+BLM_papal_blessing = {
+    tolerance_own = 3
+	legitimacy = 0.5
+	improve_relation_modifier = 0.5
+	diplomatic_upkeep = 1
+}
+BLM_new_dawn = {
+    tolerance_own = 3
+	legitimacy = 1.5
+	prestige = 0.5
+	diplomatic_reputation = 1
+	global_unrest = -2
+	global_missionary_strength = 0.05
+}
+BLM_colonial_fund = {
+    colonists = 1
+	global_colonial_growth = 35
+	colonist_placement_chance = 0.1
+}
+BLM_Karibskata_Koloniq = {
+    global_tariffs = 0.25
+	treasure_fleet_income = 0.15
+}
+BLM_new_continent = {
+    colonists = 1
+	global_colonial_growth = 40
+	colonist_placement_chance = 0.1
+}
+BLM_expedition = {
+    land_attrition = -0.10
+	free_maintenance_on_expl_conq = yes
+}
+BLM_america_conquered = {
+    global_tariffs = 0.25
+	treasure_fleet_income = 0.1
+}
+BLM_fortify_our_hold = {
+    liberty_desire_from_subject_development = -0.25
+	vassal_income = 0.3
+}
+BLM_expansion = {
+    overextension_impact_modifier = -0.1
+	colony_cost_modifier = -1
+	native_assimilation = 0.25
+	colonists = 1
+}
+BLM_towards_south = {
+    range = 0.8
+	naval_attrition = -0.2
+	naval_morale = 0.1
+}
+BLM_african_foothold = {
+    global_colonial_growth = 15
+	native_assimilation = 0.15
+	native_uprising_chance = -0.10
+}
+BLM_slaves = {
+    trade_efficiency = 0.2
+	trade_range_modifier = 0.25
+	global_trade_power = 0.15
+	production_efficiency = 0.07
+}
+BLM_african_presence = {
+    vassal_income = 0.1
+	reduced_liberty_desire_on_other_continent = 10
+}
+BLM_african_conquest = {
+    land_attrition = -0.10
+	war_exhaustion = -0.10
+	movement_speed = 0.10
+	ae_impact = -0.2
+	warscore_cost_vs_other_religion = -0.20
+}
+BLM_asia_coming = {
+    free_maintenance_on_expl_conq = yes
+	range = 0.5
+}
+BLM_foothold_australia = {
+    colonists = 1
+	global_colonial_growth = 15
+	native_assimilation = 0.20
+}
+BLM_pacific_dominion = {
+    global_trade_power = 0.15
+	trade_range_modifier = 0.20
+	global_ship_trade_power = 0.2
+	reduced_trade_penalty_on_non_main_tradenode = 0.20
+}
+BLM_indian_foothold = {
+    trade_efficiency = 0.1
+	global_ship_trade_power = 0.2
+}
+BLM_singapore_trade = {
+    trade_efficiency = 0.1
+	global_ship_trade_power = 0.2
+	trade_range_modifier = 0.25
+}
+BLM_chinese_trade = {
+    trade_efficiency = 0.1
+	trade_range_modifier = 0.25
+	privateer_efficiency = 0.2
+}
+BLM_stabilise_our_grip = {
+    liberty_desire_from_subject_development = -0.05
+	global_unrest = -1
+}
+BLM_into_indonesia = {
+    naval_morale = 0.1
+	ship_durability = 0.1
+	navy_tradition_decay = -0.01
+}
+BLM_into_indochina = {
+    army_tradition_decay = -0.01
+	land_morale = 0.10
+	land_attrition = -0.10
+}
+BLM_global_empire = {
+    production_efficiency = 0.05
+	monthly_splendor = 1
+	prestige_decay = -0.01
+	global_autonomy = -0.05
+	merchants = 2
+	global_trade_power = 0.1
+	global_ship_trade_power = 0.2
+	reduced_trade_penalty_on_non_main_tradenode = 0.25
+}
+#modifiers including the administration of China - Shishman
+
+BLM_china_riches = {
+    trade_efficiency = 0.1
+	global_trade_power = 0.1
+	global_foreign_trade_power = 0.2
+	embargo_efficiency = 0.25
+	trade_steering = 0.15
+}
+BLM_secure_the_coast = {
+    missionary_maintenance_cost = -0.1
+	global_heathen_missionary_strength = 0.03
+	global_unrest = -1
+}
+BLM_foothold_in_china = {
+    global_own_trade_power = 0.1
+	global_unrest = -1
+	overextension_impact_modifier = -0.1
+	warscore_cost_vs_other_religion = -0.25
+}
+BLM_reshaping_the_army = {
+    land_morale = 0.1
+	siege_ability = 0.1
+	movement_speed = 0.1
+}
+BLM_accuire_navy = {
+    naval_morale = 0.1
+	ship_durability = 0.15
+	navy_tradition = 1
+}
+BLM_capital_secured = {
+    defensiveness = 0.10
+	fort_maintenance_modifier = -0.10
+	legitimacy = 1
+}
+BLM_developing_center = {
+	institution_growth = 1.5
+	local_missionary_strength = 0.03
+	trade_goods_size = 0.5
+}
+BLM_new_religion_in_china = {
+    tolerance_own = 1
+	global_unrest = -1
+	church_loyalty_modifier = 0.15
+	church_influence_modifier = 0.1
+}
+BLM_battleplans = {
+    warscore_from_battles_modifier = 0.1
+	prestige_from_naval = 0.1
+	blockade_efficiency = 0.1
+	province_warscore_cost = -0.2
+	core_creation = -0.15
+}
+BLM_expanding_army = {
+    army_tradition = 2
+	army_tradition_decay = -0.03
+	army_tradition_from_battle = 0.01
+}
+BLM_land_academy = {
+	local_unrest = -1
+	yearly_army_professionalism = 0.01
+	leader_land_fire = 2
+	leader_land_manuever = 2
+	leader_land_shock = 2
+	leader_siege = 2
+}
+BLM_navy_expansion = {
+    navy_tradition = 1.5
+	navy_tradition_decay = -0.02
+	naval_tradition_from_battle = 0.1
+	naval_tradition_from_trade = 0.1
+}
+BLM_macau_navy_academy = {
+    local_unrest = -1
+	leader_naval_fire = 2
+	leader_naval_manuever = 2
+	leader_naval_shock = 2
+	siege_blockade_progress = 1
+}
+BLM_north = {
+    infantry_fire = 1
+	cavalry_fire = 1
+	artillery_fire = 1
+}
+BLM_center = {
+    movement_speed = 0.10
+	land_attrition = -0.10
+	morale_damage = 0.025
+}
+BLM_south = {
+    reinforce_speed = 0.10
+	siege_ability = 0.10
+	reinforce_cost_modifier = -0.10
+}
+BLM_spliting_china = {
+    ae_impact = -0.2
+	build_cost = -0.1
+	core_creation = -0.1
+}
+BLM_center_secured = {
+	local_defensiveness = 0.1
+	local_hostile_movement_speed = 0.1
+	local_unrest = -1
+}
+BLM_taking_the_south = {
+    build_cost = -0.1
+	core_creation = -0.1
+	legitimacy = 1
+}
+BLM_south_secured = {
+    local_unrest = -1
+	local_defensiveness = 0.1
+	blockade_force_required = 0.3
+}
+BLM_pushing_the_north = {
+    core_creation = -0.1
+	ae_impact = -0.2
+	yearly_corruption = -0.1
+}
+BLM_north_secured = {
+    local_unrest = -1
+	blockade_force_required = 0.3
+	local_hostile_movement_speed = 0.1
+}
+BLM_partly_goal = {
+    global_missionary_strength = 0.03
+	global_own_trade_power = 0.1
+	global_unrest = -1.5
+	all_estate_loyalty_equilibrium = 0.15
+}
+BLM_south_has_fallen = {
+    prestige_decay = -0.01
+	core_creation = -0.1
+	stability_cost_modifier = -0.1
+}
+BLM_south_incursions = {
+    fort_level = 1
+	local_defensiveness = 0.1
+	local_unrest = -1
+}
+BLM_shattered_throne = {
+    prestige_decay = -0.01
+	ae_impact = -0.2
+	core_creation = -0.1
+}
+BLM_north_incursions = {
+    local_hostile_movement_speed = 0.1
+	local_defensiveness = 0.1
+	local_unrest = -1
+}
+BLM_convert_tibet = {
+    global_missionary_strength = 0.03
+	missionaries = 1
+	missionary_maintenance_cost = -0.1
+}
+BLM_territory_of_tibet = {
+    global_missionary_strength = 0.01
+	missionary_maintenance_cost = -0.1
+	num_accepted_cultures = 1
+}
+BLM_territory_of_korea = {
+    num_accepted_cultures = 1
+	trade_efficiency = 0.1
+	local_defensiveness = 0.1
+}
+BLM_convert_korea = {
+    global_missionary_strength = 0.03
+	missionaries = 1
+	missionary_maintenance_cost = -0.1
+}
+BLM_first_wave = {
+    global_unrest = 1
+	global_missionary_strength = 0.04
+	missionaries = 1
+	tolerance_heathen = -1
+}
+BLM_christian_china = {
+    global_unrest = -1
+	tolerance_own = 1
+	global_autonomy = -0.03
+}
+BLM_preparing_the_coronation = {
+    global_unrest = -2
+	global_rebel_suppression_efficiency = -0.2
+	global_tax_income = 12
+	all_estate_loyalty_equilibrium = 0.1
+}
+BLM_the_new_seat = {
+    prestige_decay = -0.01
+	institution_growth = 1
+	local_unrest = -1
+	trade_goods_size = 1
+}
+BLM_dominions = {
+    diplomatic_upkeep = 2
+	vassal_income = 0.2
+	vassal_forcelimit_bonus = 0.2
+}
+BLM_asian_puppet = {
+    diplomatic_upkeep = 1
+	vassal_income = 0.1
+	vassal_forcelimit_bonus = 0.1
+}
+BLM_china = {
+    diplomatic_upkeep = 1
+	prestige_decay = -0.01
+	global_foreign_trade_power = 0.15
+	embargo_efficiency = 0.25
+}

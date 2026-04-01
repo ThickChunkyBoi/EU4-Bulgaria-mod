@@ -1,0 +1,237 @@
+namespace = flavor_bgc
+normal_or_historical_nations = yes
+
+country_event = {
+	id = flavor_bgc.1
+	title = flavor_bgc.1.t
+	desc = flavor_bgc.1.d
+	picture = DIET_eventPicture
+	major = no
+	is_triggered_only = yes
+	option = {
+		name = flavor_bgc.1.a
+		ai_chance = {
+		    factor = 1
+		}
+		south_jiangsu_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+country_event = {
+	id = flavor_bgc.2
+	title = flavor_bgc.2.t
+	desc = flavor_bgc.2.d
+	picture = NEGOTIATIONS_LUBLIN_eventPicture
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_bgc.2.a
+		ai_chance = {
+			factor = 1
+		}
+		set_capital = 1821
+		add_country_modifier = {
+			name = "BLM_foothold_in_china"
+			duration = 7300
+		}
+	}
+}
+country_event = {
+	id = flavor_bgc.3
+	title = flavor_bgc.3.t
+	desc = flavor_bgc.3.d
+	picture = BATTLE_eventPicture
+	major = no
+	is_triggered_only = yes
+	option = {
+		name = flavor_bgc.3.a
+		ai_chance = {
+			factor = 1
+		}
+		add_country_modifier = {
+			name = "BLM_battleplans"
+			duration = 5475
+		}
+		jiangsu_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		anhui_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		south_anhui_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		zhejiang_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+country_event = {
+	id = flavor_bgc.4
+	title = flavor_bgc.4.t
+	desc = flavor_bgc.4.d
+	picture = AULIC_COUNCIL_eventPicture
+	major = no
+	is_triggered_only = yes
+	option = {
+		name = flavor_bgc.4.a
+		ai_chance = {
+			factor = 1
+		}
+		add_country_modifier = {
+			name = "BLM_north"
+			duration = 3650
+		}
+	}
+	option = {
+		name = flavor_bgc.4.b
+		ai_chance = {
+			factor = 1
+		}
+		add_country_modifier = {
+			name = "BLM_center"
+			duration = 3650
+		}
+	}
+	option = {
+		name = flavor_bgc.4.c
+		ai_chance = {
+			factor = 1
+		}
+		add_country_modifier = {
+			name = "BLM_south"
+			duration = 3650
+		}
+	}
+}
+country_event = {
+	id = flavor_bgc.5
+	title = flavor_bgc.5.t
+	desc = flavor_bgc.5.d
+	picture = easterngfx_COURT_eventPicture
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = flavor_bgc.5.a
+		ai_chance = {
+			factor = 1
+		}
+		add_prestige = 20
+		guangxi_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		xinan_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		north_china_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+country_event = {
+	id = flavor_bgc.6
+	title = flavor_bgc.6.t
+	desc = flavor_bgc.6.d
+	picture = iberian_ECONOMY_eventPicture
+	major = no
+	is_triggered_only = yes
+	option = {
+		name = flavor_bgc.6.a
+		ai_chance = {
+			factor = 1
+		}
+		add_country_modifier = {
+			name = "BLM_territory_of_tibet"
+			duration = 7300
+		}
+		add_accepted_culture = tibetan
+	}
+	option = {
+		name = flavor_bgc.6.b
+		ai_chance = {
+			factor = 1
+		}
+		release = TIB
+		TIB = {
+			change_religion = ROOT
+			add_country_modifier = {
+				name = "BLM_convert_tibet"
+				duration = 7300
+			}
+		}
+		create_march = TIB
+		tibet_region = {
+			add_core = TIB
+		}
+	}
+}
+country_event = {
+	id = flavor_bgc.7
+	title = flavor_bgc.7.t
+	desc = flavor_bgc.7.d
+	picture = DIPLOMACY_SIGNING_eventPicture
+	major = no
+	is_triggered_only = yes
+	option = {
+		name = flavor_bgc.7.a
+		ai_chance = {
+			factor = 1
+		}
+		add_country_modifier = {
+			name = "BLM_territory_of_korea"
+			duration = 7300
+		}
+		add_accepted_culture = korean
+	}
+	option = {
+		name = flavor_bgc.7.b
+		ai_chance = {
+			factor = 1
+		}
+		release = KOR
+		KOR = {
+			change_religion = ROOT
+			add_country_modifier = {
+				name = "BLM_convert_korea"
+				duration = 7300
+			}
+		}
+		create_march = KOR
+		korea_region = {
+			add_core = KOR
+		}
+	}
+}
